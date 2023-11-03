@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4" style="margin-top: 100px;">
+            <div class="card"  style="border: 2px solid black; padding: 5px;" >
+                <form action=""  method="post">
+
+                    {{form}}
+
+
+
+<br>
+                        {% csrf_token %}
+                    <input type="submit" class="btn btn-primary" value="SAVE">
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}
+
+

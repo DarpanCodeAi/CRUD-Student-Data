@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="contaier">
+    <div class="row justify-content-center" style="padding: 50px;">
+      
+            
+<table>
+    <thead>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Semester</th>
+        <th>Department</th>
+        <th>Age</th>
+        <th colspan="2">Option</th>
+    </thead>
+    <tbody>
+{% for field in data %}
+        <tr>
+            <td>{{field.firstname}}</td>
+            <td>{{field.lastname}}</td>
+            <td>{{field.semester}}</td>
+            <td>{{field.department}}</td>
+            <td>{{field.age}}</td>
+            <td><a href="{% url 'update' field.id  %}" class="btn btn-outline-primary" >Edit</a></td>
+            <td><form action="" method="post">
+                <a href="{%  url 'delete' field.id %}"  class="btn btn-outline-primary">Delete</a>
+            </form></td>
+        </tr>
+
+{% endfor %}
+
+    </tbody>
+</table>
+
+    
+
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
+
+
